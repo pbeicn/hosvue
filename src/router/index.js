@@ -1,14 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+// import Home from "../views/Home.vue";
+import index from "@/views/index.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: Home
+    name: "index",
+    component: index
   },
   {
     path: "/about",
@@ -18,6 +19,18 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/doclist",
+    name: "doclist",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/doclist.vue")
+  },
+  {
+    path: "/docinfo",
+    name: "docinfo",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/docinfo.vue")
   }
 ];
 
